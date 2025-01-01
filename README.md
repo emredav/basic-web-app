@@ -6,12 +6,12 @@ This is a simple web application project that demonstrates the use of HTML, CSS,
 
 ```
 basic-web-app
+├── index.html          # Main HTML document
 ├── src
-│   ├── index.html       # Main HTML document
 │   ├── styles
-│   │   └── style.css    # Styles for the web application
+│   │   └── style.css   # Styles for the web application
 │   └── scripts
-│       └── app.js       # JavaScript code for interactivity
+│       └── app.js      # JavaScript code for interactivity
 └── README.md            # Project documentation
 ```
 
