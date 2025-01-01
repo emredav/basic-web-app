@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metin Analiz Uygulaması</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div id="home-page">
+            <div class="text-center mb-5">
+                <h1>Test Araçları</h1>
+                <div class="mt-4">
+                    <button id="start-btn" class="btn btn-primary btn-lg mx-2">Char Counter'ı Başlat</button>
+                    <button id="start-generator-btn" class="btn btn-success btn-lg mx-2">Test Datası Oluştur</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="generator-page" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Random Test Datası Oluştur</h1>
+                <button id="back-from-generator-btn" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left"></i> Geri Dön
+                </button>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label">Prefix</label>
+                            <input type="text" id="prefix-input" class="form-control" placeholder="Ön ek">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Suffix</label>
+                            <input type="text" id="suffix-input" class="form-control" placeholder="Son ek">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Karakter Sayısı</label>
+                            <input type="number" id="char-length" class="form-control" min="1" value="5">
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check mb-2">
+                                <input type="checkbox" id="include-spaces" class="form-check-input">
+                                <label class="form-check-label">Boşluk İçersin</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" id="include-affix-length" class="form-check-input">
+                                <label class="form-check-label">Prefix ve Suffix karakter sayısına dahil edilsin</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <button id="generate-btn" class="btn btn-success">Oluştur</button>
+                        </div>
+                        <div class="col-12 position-relative">
+                            <textarea id="result-area" class="form-control" rows="3" readonly></textarea>
+                            <button id="copy-btn" class="btn btn-sm btn-outline-secondary position-absolute top-0 end-0 mt-2 me-2">
+                                <i class="bi bi-clipboard"></i> Kopyala
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="counter-page" style="display: none;">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1>Charcounter</h1>
+                <button id="back-btn" class="btn btn-outline-primary">
+                    <i class="bi bi-arrow-left"></i> Geri Dön
+                </button>
+            </div>
+            <p class="text-muted">Kelime sayacı, Karakter sayacı</p>
+            
+            <div class="mb-3">
+                <textarea id="text-input" class="form-control" rows="10" placeholder="Lütfen metninizi girin ..."></textarea>
+            </div>
+
+            <div class="row text-center">
+                <div class="col-md-3">
+                    <div class="counter-box">
+                        <span id="char-count">0</span>
+                        <span>Karakter</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-box">
+                        <span id="word-count">0</span>
+                        <span>Sözcük</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-box">
+                        <span id="char-no-space-count">0</span>
+                        <span>Boşluksuz</span>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="counter-box">
+                        <span id="paragraph-count">0</span>
+                        <span>Paragraf</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
